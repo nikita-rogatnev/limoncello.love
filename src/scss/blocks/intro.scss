@@ -4,16 +4,16 @@
 .intro {
     @include wrapper;
     width: 100%;
-    height: 100vh;
-    background: $color-primary-text-dark url("../img/background.jpg") no-repeat right center;
-    background-size: contain;
+    min-height: 100vh;
+    background: $color-primary-text-dark url("../img/intro__background.jpg") no-repeat right bottom;
+    background-size: auto 70vh;
+    justify-content: flex-start;
 
     h1 {
-
         margin: 0;
         padding: 0;
         color: $color-primary-text-light;
-        font-size: 11rem;
+        font-size: 5rem;
         line-height: 1;
         text-transform: uppercase;
         text-shadow: 0.5rem 0.6rem 0.1rem $color-secondary;
@@ -26,9 +26,27 @@
 
         margin: 0 0 12px;
         text-shadow: 0 0 2rem $color-accent;
-        font-size: 6rem;
+        font-size: 4rem;
         line-height: 1;
         font-weight: $regular-font-weight;
+    }
+
+    &__hand {
+        display: block;
+        position: absolute;
+        width: 7rem;
+        bottom: 6rem;
+        font-size: 0;
+        line-height: 0;
+        transition: transform .2s ease-in-out;
+
+        &:hover {
+            transform: translateY(1rem);
+        }
+    }
+
+    &__hand-image {
+        transform: rotate(-90deg);
     }
 
     &::after {
@@ -41,6 +59,32 @@
         background: url("../img/line.svg");
         background-size: contain;
         background-repeat: repeat-x;
+    }
+
+    &--success {
+        &::after {
+            display: none;
+        }
+    }
+
+    @media (min-width: $medium-up) {
+        background-size: contain;
+        justify-content: center;
+
+        h1 {
+            font-size: 11rem;
+        }
+
+        h2 {
+            font-size: 6rem;
+        }
+    }
+
+    @media (min-width: $large-up) {
+        &__hand {
+            left: 50%;
+            transform: translateY(-50%);
+        }
     }
 }
 

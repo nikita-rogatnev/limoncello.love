@@ -15,7 +15,7 @@ html {
   padding: 0; }
 
 body {
-  color: #1c9797;
+  color: #121214;
   background: lemonchiffon;
   font-family: "Oswald", Arial, sans-serif;
   font-size: 1.6rem;
@@ -28,8 +28,7 @@ body {
   background-repeat: no-repeat no-repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  height: 2500px; }
+  text-rendering: optimizeLegibility; }
 
 ul {
   list-style-type: none; }
@@ -73,9 +72,12 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  height: 100vh;
-  background: black url("../img/background.jpg") no-repeat right center;
-  background-size: contain; }
+  min-height: 100vh;
+  background: black url("../img/intro__background.jpg") no-repeat right bottom;
+  background-size: auto 70vh;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
   .intro__wrapper {
     width: 100%;
     margin: 0 auto;
@@ -84,7 +86,7 @@ a {
     margin: 0;
     padding: 0;
     color: white;
-    font-size: 11rem;
+    font-size: 5rem;
     line-height: 1;
     text-transform: uppercase;
     text-shadow: 0.5rem 0.6rem 0.1rem #1c9797; }
@@ -94,9 +96,26 @@ a {
     color: white;
     margin: 0 0 12px;
     text-shadow: 0 0 2rem lemonchiffon;
-    font-size: 6rem;
+    font-size: 4rem;
     line-height: 1;
     font-weight: 400; }
+  .intro__hand {
+    display: block;
+    position: absolute;
+    width: 7rem;
+    bottom: 6rem;
+    font-size: 0;
+    line-height: 0;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out; }
+    .intro__hand:hover {
+      -webkit-transform: translateY(1rem);
+              transform: translateY(1rem); }
+  .intro__hand-image {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
   .intro::after {
     content: "";
     display: block;
@@ -107,6 +126,8 @@ a {
     background: url("../img/line.svg");
     background-size: contain;
     background-repeat: repeat-x; }
+  .intro--success::after {
+    display: none; }
 
 @-webkit-keyframes arrow-neon {
   0%, 100% {
@@ -125,16 +146,136 @@ a {
     opacity: 0.7; } }
 
 /* ------------------------------------------ */
-/* FOOTER BLOCK
+/* ABOUT BLOCK
 /* ------------------------------------------ */
-@media (min-width: 768px) {
+.about {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  position: relative; }
+  .about__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem; }
+  .about__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .about__heading {
+    position: relative;
+    font-family: "Caveat", Arial, sans-serif;
+    display: block;
+    margin: 0 0 3rem;
+    font-size: 7rem;
+    line-height: 1;
+    font-weight: 400; }
+  .about__list li {
+    padding: 0 0 2rem; }
+  .about__list h3 {
+    text-transform: uppercase; }
+  .about::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2.7rem;
+    width: 100vw;
+    height: 2.7rem;
+    background: url("../img/line.svg");
+    background-size: contain;
+    background-repeat: repeat-x;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    z-index: 2; }
+
+/* ------------------------------------------ */
+/* PAY BLOCK
+/* ------------------------------------------ */
+.pay {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  background: black url("../img/pay__background.jpg") no-repeat center center;
+  background-size: cover; }
+  .pay__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem; }
+  @media (min-width: 768px) {
       .intro__wrapper {
+        width: 768px; }
+    .intro {
+      background-size: contain;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      .intro h1 {
+        font-size: 11rem; }
+      .intro h2 {
+        font-size: 6rem; }
+      .about__wrapper {
+        width: 768px; }
+    .about__wrapper {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+    .about__image {
+      width: 50%; }
+    .about__list {
+      width: 50%; }
+      .pay__wrapper {
         width: 768px; } }
-@media (min-width: 1170px) {
+  @media (min-width: 1170px) {
       .intro__wrapper {
+        width: 1170px; }
+    .intro__hand {
+      left: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      .about__wrapper {
+        width: 1170px; }
+      .pay__wrapper {
         width: 1170px; } }
-@media (min-width: 1550px) {
+  @media (min-width: 1550px) {
       .intro__wrapper {
+        width: 1550px; }
+      .about__wrapper {
+        width: 1550px; }
+      .pay__wrapper {
         width: 1550px; } }
 
 /*# sourceMappingURL=style.css.map */

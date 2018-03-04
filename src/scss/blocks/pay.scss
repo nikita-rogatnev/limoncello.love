@@ -1,0 +1,10 @@
+/* ------------------------------------------ */
+/* PAY BLOCK
+/* ------------------------------------------ */
+.pay {
+    @include wrapper;
+    min-height: 100vh;
+
+    background: $color-primary-text-dark url("../img/pay__background.jpg") no-repeat center center;
+    background-size: cover;
+}
