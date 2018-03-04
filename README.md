@@ -1,5 +1,7 @@
 # http://limoncello.love
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rogatnev-nikita/limoncello.love.svg)](https://greenkeeper.io/)
+
 [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url] [![devDependency status][dev-dependency-image]][dev-dependency-url]
 
 ## Summary
